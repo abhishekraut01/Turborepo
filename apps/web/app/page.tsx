@@ -1,7 +1,9 @@
+import "ui/styles.css";
+
 export default function Home() {
   return(
     <div>
-      <h1>chat app</h1>
+      <h1 className="text-2xl">chat app</h1>
     </div>
   )
 }
