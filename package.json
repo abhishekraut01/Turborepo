@@ -1,5 +1,5 @@
 {
-  "name": "MonorepoTurborepo",
+  "name": "chatapp",
   "private": true,
   "scripts": {
     "build": "turbo run build",
