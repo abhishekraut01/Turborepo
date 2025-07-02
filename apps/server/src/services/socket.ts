@@ -19,9 +19,14 @@ class socketServer {
     io.on("connect", (socket) => {
       console.log("new socket connected", socket.id);
       socket.on("event:message", async ({ message }: { message: string }) => {
-        // handle the message event here
-        console.log("Received message:", message);
+        socket.emit("event:message", {
+          message: message
+        })
       });
+
+      socket.on("disconnect" , (reason)=>{
+        console.log("socket disconnect reason : " , reason)
+      })
     });
     
   }

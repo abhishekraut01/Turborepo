@@ -1,6 +1,18 @@
+"use client"
+import { useState } from "react";
+import { useSocket } from "./context/SocketProvider";
 import styles from "./page.module.css";
 
 export default function Home() {
+
+  const {sendMessage}= useSocket()
+  const [message , setMessage] = useState("")
+
+  const handleSubmit = (e:SubmitEvent)=>{
+    e.preventDefault()
+    sendMessage(message)
+    setMessage("")
+  }
   return (
     <div className={styles.page}>
       <div className={styles.chatbox}>
@@ -14,8 +26,12 @@ export default function Home() {
           </div>
         </div>
         <div className={styles.chatButtonAndInput}>
-          <input className={styles.inputBox} type="text" placeholder="Type a message..." />
-          <button className={styles.Btn}>Send</button>
+          <input className={styles.inputBox} value={message} onChange={(e)=>{
+            setMessage(e.target.value)
+          }} type="text" placeholder="Type a message..." />
+          <button onClick={(e)=>{
+            handleSubmit(e)
+          }} className={styles.Btn}>Send</button>
         </div>
       </div>
     </div>
