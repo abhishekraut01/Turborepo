@@ -6,16 +6,16 @@ import styles from "./page.module.css";
 export default function Home() {
 
   const {sendMessage}= useSocket()
-  const [message , setMessage] = useState("")
+  const [message , setMessage] = useState<string>("")
   const {data} =  useSocket()
 
-  const handleSubmit = (e:SubmitEvent)=>{
-    e.preventDefault()
-    sendMessage(message)
-    setMessage("")
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement> | React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    sendMessage(message);
+    setMessage("");
   }
   return (
-    <div className={styles.page}>
+    <div className={styles.page}> 
       <div className={styles.chatbox}>
         <div className={styles.chatContent}>
           {/* Chat messages will appear here */}
@@ -26,14 +26,12 @@ export default function Home() {
             {message}
           </div>
         </div>
-        <div className={styles.chatButtonAndInput}>
+        <form className={styles.chatButtonAndInput} onSubmit={handleSubmit}>
           <input className={styles.inputBox} value={message} onChange={(e)=>{
             setMessage(e.target.value)
           }} type="text" placeholder="Type a message..." />
-          <button onClick={(e)=>{
-            handleSubmit(e)
-          }} className={styles.Btn}>Send</button>
-        </div>
+          <button type="submit" className={styles.Btn}>Send</button>
+        </form>
       </div>
     </div>
   );

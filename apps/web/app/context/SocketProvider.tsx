@@ -20,14 +20,14 @@ interface MessagePayload {
 
 interface SocketContextType {
   sendMessage: (msg: string) => void;
-  data:string
+  data: string[];
 }
 
 const SocketContext = createContext<SocketContextType | null>(null);
 
 export const SocketProvider: React.FC<SocketProviderProps> = ({ children }) => {
   const [socket, setSocket] = useState<Socket | undefined>(undefined);
-  const [data, setData] = useState< string>("");
+  const [data, setData] = useState<string[]>([]);
 
   useEffect(() => {
     const _socketio = io("http://localhost:9000", {
@@ -38,12 +38,13 @@ export const SocketProvider: React.FC<SocketProviderProps> = ({ children }) => {
       console.log("✅ Socket connected:", _socketio.id);
     });
 
-    _socketio.on("disconnect", (reason) => {
-      console.log("❌ Socket disconnected:", reason);
+    _socketio.on("message", (data: MessagePayload) => {
+      const res = JSON.parse(data.message);
+      setData((prev) => [...prev, res]);
     });
 
-    _socketio.on("event:message", (data: MessagePayload) => {
-        setData(data.message)
+    _socketio.on("disconnect", (reason) => {
+      console.log("❌ Socket disconnected:", reason);
     });
 
     setSocket(_socketio);
@@ -68,7 +69,7 @@ export const SocketProvider: React.FC<SocketProviderProps> = ({ children }) => {
   );
 
   return (
-    <SocketContext.Provider value={{ sendMessage , data }}>
+    <SocketContext.Provider value={{ sendMessage, data }}>
       {children}
     </SocketContext.Provider>
   );

@@ -31,6 +31,7 @@ class socketServer {
         origin: "*",
       },
     });
+    sub.subscribe("MESSAGES");
   }
 
   public intiListener() {
@@ -39,10 +40,17 @@ class socketServer {
 
     io.on("connect", (socket) => {
       console.log("new socket connected", socket.id);
+
       socket.on("event:message", async ({ message }: { message: string }) => {
         await pub.publish("MESSAGES", JSON.stringify({ message }));
       });
 
+      socket.on("message", (channel, message) => {
+        if (channel === "MESSAGES") {
+          io.emit("message", message);
+        }
+      });
+      
       socket.on("disconnect", (reason) => {
         console.log("socket disconnect reason : ", reason);
       });
