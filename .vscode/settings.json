@@ -3,5 +3,6 @@
     {
       "mode": "auto"
     }
-  ]
+  ],
+  "liveServer.settings.multiRootWorkspaceName": "MonorepoTurborepo"
 }
