@@ -15,6 +15,12 @@ const socket = new socketServer();
 socket.io.attach(httpServer);
 socket.intiListener();
 
+app.get('/health' , (req,res)=>{
+  res.status(200).json({
+    message:"server is running and port is 9000"
+  })
+})
+
 httpServer.listen(PORT, () => {
   console.log("server is listening on port", PORT);
 });
