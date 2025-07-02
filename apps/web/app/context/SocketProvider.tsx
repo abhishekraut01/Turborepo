@@ -1,41 +1,50 @@
-"use client"
+"use client";
 
-import React, { createContext, ReactNode, useCallback, useEffect } from "react";
+import React, {
+  createContext,
+  ReactNode,
+  useCallback,
+  useContext,
+  useEffect,
+} from "react";
 import { io } from "socket.io-client";
 
-
 type SocketProviderProps = {
-    children: ReactNode;
+  children: ReactNode;
 };
 
-interface createContextI{
-    sendMessage : (msg:string )=>void
+interface createContextI {
+  sendMessage: (msg: string) => void;
 }
-
 
 const SocketContext = createContext<createContextI | null>(null);
 
+export const SocketProvider: React.FC<SocketProviderProps> = ({ children }) => {
+  useEffect(() => {
+    const _socketio = io("http://localhost:9000/");
 
-const SocketProvider: React.FC<SocketProviderProps> = ({ children }) => {
+    return () => {
+      _socketio.disconnect();
+    };
+  }, []);
 
-    useEffect(() => {
-      const _socketio = io("http://localhost:9000/")
-    
-      return () => {
-        _socketio.disconnect()
-      }
-    }, [])
-    
+  const sendMessage: createContextI["sendMessage"] = useCallback(
+    (msg: string) => {
+      console.log("messahe send");
+    },
+    []
+  );
 
-    const sendMessage:createContextI["sendMessage"] = useCallback((msg:string)=>{
-        console.log("messahe send")
-    },[])
-
-    return (
-        <SocketContext.Provider value={{ sendMessage }}>
-            {children}
-        </SocketContext.Provider>
-    );
+  return (
+    <SocketContext.Provider value={{ sendMessage }}>
+      {children}
+    </SocketContext.Provider>
+  );
 };
 
-export default SocketProvider;
+export const useSocket = () => {
+  const state = useContext(SocketContext);
+  if (!state) throw new Error("state is undefined");
+
+  return state;
+};
