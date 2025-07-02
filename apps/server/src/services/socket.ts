@@ -1,6 +1,5 @@
 import { Server } from "socket.io";
 import Redis from "ioredis";
-
 import * as dotenv from "dotenv";
 dotenv.config();
 
@@ -12,6 +11,7 @@ const pub = new Redis({
   username: process.env.USERNAME,
   password: process.env.PASSWORD,
 });
+
 const sub = new Redis({
   host: process.env.HOST,
   port: process.env.PORT_REDIS
@@ -23,36 +23,40 @@ const sub = new Redis({
 
 class socketServer {
   private _io: Server;
+
   constructor() {
-    console.log("init socket server");
+    console.log("🟢 init socket server");
     this._io = new Server({
       cors: {
         allowedHeaders: ["*"],
         origin: "*",
       },
     });
+
     sub.subscribe("MESSAGES");
+    
+    sub.on("message", (channel, message) => {
+      if (channel === "MESSAGES") {
+        this._io.emit("message", message); // broadcast to all clients
+        console.log("📢 Broadcasted message from Redis:", message);
+      }
+    });
   }
 
   public intiListener() {
-    console.log("intiListener method activated");
+    console.log("🎧 intiListener method activated");
     const io = this._io;
 
     io.on("connect", (socket) => {
-      console.log("new socket connected", socket.id);
+      console.log("✅ new socket connected:", socket.id);
 
       socket.on("event:message", async ({ message }: { message: string }) => {
-        await pub.publish("MESSAGES", JSON.stringify({ message }));
+        console.log("📨 Received from client:", message);
+        await pub.publish("MESSAGES",  message );
       });
 
-      socket.on("message", (channel, message) => {
-        if (channel === "MESSAGES") {
-          io.emit("message", message);
-        }
-      });
-      
       socket.on("disconnect", (reason) => {
-        console.log("socket disconnect reason : ", reason);
+        console.log("❌ socket disconnected:", reason);
       });
     });
   }

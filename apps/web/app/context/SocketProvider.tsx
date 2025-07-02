@@ -14,9 +14,6 @@ type SocketProviderProps = {
   children: ReactNode;
 };
 
-interface MessagePayload {
-  message: string;
-}
 
 interface SocketContextType {
   sendMessage: (msg: string) => void;
@@ -38,9 +35,15 @@ export const SocketProvider: React.FC<SocketProviderProps> = ({ children }) => {
       console.log("✅ Socket connected:", _socketio.id);
     });
 
-    _socketio.on("message", (data: MessagePayload) => {
-      const res = JSON.parse(data.message);
-      setData((prev) => [...prev, res]);
+    _socketio.on("message", (data: string) => {
+      try {
+        console.log("This is data we get from server", data);
+        const parsed = data; // already a string now
+        console.log("The data after parsed", parsed);
+        setData((prev) => [...prev, parsed]);
+      } catch (error) {
+        console.warn("⚠️ Failed to handle message:", data);
+      }
     });
 
     _socketio.on("disconnect", (reason) => {
@@ -59,7 +62,9 @@ export const SocketProvider: React.FC<SocketProviderProps> = ({ children }) => {
   const sendMessage = useCallback(
     (msg: string) => {
       if (socket) {
-        socket.emit("event:message", { message: msg });
+        socket.emit("event:message", {
+          message: JSON.stringify(msg), 
+        });
         console.log("📤 Sent message:", msg);
       } else {
         console.warn("🚫 Cannot send, socket not connected.");
