@@ -7,6 +7,7 @@ export default function Home() {
 
   const {sendMessage}= useSocket()
   const [message , setMessage] = useState("")
+  const {data} =  useSocket()
 
   const handleSubmit = (e:SubmitEvent)=>{
     e.preventDefault()
@@ -19,10 +20,10 @@ export default function Home() {
         <div className={styles.chatContent}>
           {/* Chat messages will appear here */}
           <div className={styles.message + " " + styles.incoming}>
-            Hello! How can I help you?
+            {data}
           </div>
           <div className={styles.message + " " + styles.outgoing}>
-            I want to build a chat app.
+            {message}
           </div>
         </div>
         <div className={styles.chatButtonAndInput}>
