@@ -1,4 +1,5 @@
 import express from "express";
+import { Request, Response } from "express";
 import * as dotenv from "dotenv";
 dotenv.config();
 
@@ -13,7 +14,7 @@ const socket = new socketServer();
 socket.io.attach(httpServer);
 socket.intiListener();
 
-app.get("/health", (req, res) => {
+app.get("/health", (req: Request, res: Response) => {
   res.status(200).json({
     message: "server is running and port is 9000",
   });
@@ -30,3 +31,4 @@ process.on("SIGINT", () => {
     process.exit(0);
   });
 });
+

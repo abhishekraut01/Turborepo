@@ -1,0 +1,315 @@
+//on room join
+[
+    "chatMessage",
+    {
+        "musicStreaming": {
+            "playlist": []
+        },
+        "_id": "689501c3f737d2a3af3d3e6c",
+        "roomDesc": "This room is created by sweabhishek01",
+        "typing": [],
+        "admins": [],
+        "kicked": [],
+        "maxParticipants": 10,
+        "roomGenre": [],
+        "roomName": "Room by sweabhishek01",
+        "roomOwner": "5crPQgv5r6aPsXgWUN68w3VTeBd2",
+        "roomUid": "budylf",
+        "username": "sweabhishek01",
+        "roomCountry": "IN",
+        "roomEnabled": true,
+        "joinCount": 0,
+        "watchTime": 0,
+        "messagesSent": 0,
+        "likes": 0,
+        "dislikes": 0,
+        "engagementScore": 0,
+        "isPublicRoom": false,
+        "messagesHistory": [],
+        "activeUsers": [
+            {
+                "username": "sweabhishek01",
+                "joiningTime": "2025-08-07T19:43:22.577Z"
+            }
+        ],
+        "createdAt": "2025-08-07T19:42:59.320Z",
+        "updatedAt": "2025-08-07T19:42:59.320Z",
+        "__v": 0
+    }
+]
+//on message send
+[
+    "chatMessage",
+    {
+        "musicStreaming": {
+            "time": "2025-08-07T19:48:04.389Z",
+            "action": 1,
+            "messageOwnerName": "sweabhishek01",
+            "messageOwnerUsername": "sweabhishek01",
+            "messageValue": "hii",
+            "playedBy": "sweabhishek01",
+            "youtubePlayer": true
+        },
+        "_id": "689501c3f737d2a3af3d3e6c",
+        "roomDesc": "This room is created by sweabhishek01",
+        "typing": [],
+        "admins": [],
+        "kicked": [],
+        "maxParticipants": 10,
+        "roomGenre": [],
+        "roomName": "Room by sweabhishek01",
+        "roomOwner": "5crPQgv5r6aPsXgWUN68w3VTeBd2",
+        "roomUid": "budylf",
+        "username": "sweabhishek01",
+        "roomCountry": "IN",
+        "roomEnabled": true,
+        "joinCount": 0,
+        "watchTime": 0,
+        "messagesSent": 0,
+        "likes": 0,
+        "dislikes": 0,
+        "engagementScore": 0,
+        "isPublicRoom": false,
+        "messagesHistory": [],
+        "activeUsers": [
+            {
+                "username": "sweabhishek01",
+                "joiningTime": "2025-08-07T19:45:58.768Z"
+            }
+        ],
+        "createdAt": "2025-08-07T19:42:59.320Z",
+        "updatedAt": "2025-08-07T19:42:59.320Z",
+        "__v": 0
+    }
+]
+//on video play
+[
+    "chatMessage",
+    {
+        "musicStreaming": {
+            "title": "4MenDown Full Video - Millind Gaba | Latest Punjabi Songs | Speed Records",
+            "artist": "Speed Records",
+            "songurl": "vA_sCFYq_CM",
+            "imageurl": "https://i.ytimg.com/vi/vA_sCFYq_CM/hq720.jpg?sqp=-oaymwEXCNAFEJQDSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLCzbpk82QkVL5BefHG34wpfg3Oerg",
+            "time": "2025-08-07T19:48:04.389Z",
+            "action": 1,
+            "messageOwnerName": "sweabhishek01",
+            "messageOwnerUsername": "sweabhishek01",
+            "messageValue": "hii",
+            "playedBy": "sweabhishek01",
+            "youtubePlayer": true
+        },
+        "_id": "689501c3f737d2a3af3d3e6c",
+        "roomDesc": "This room is created by sweabhishek01",
+        "typing": [],
+        "admins": [],
+        "kicked": [],
+        "maxParticipants": 10,
+        "roomGenre": [],
+        "roomName": "Room by sweabhishek01",
+        "roomOwner": "5crPQgv5r6aPsXgWUN68w3VTeBd2",
+        "roomUid": "budylf",
+        "username": "sweabhishek01",
+        "roomCountry": "IN",
+        "roomEnabled": true,
+        "joinCount": 0,
+        "watchTime": 0,
+        "messagesSent": 0,
+        "likes": 0,
+        "dislikes": 0,
+        "engagementScore": 0,
+        "isPublicRoom": false,
+        "messagesHistory": [],
+        "activeUsers": [
+            {
+                "username": "sweabhishek01",
+                "joiningTime": "2025-08-07T19:45:58.768Z"
+            }
+        ],
+        "createdAt": "2025-08-07T19:42:59.320Z",
+        "updatedAt": "2025-08-07T19:42:59.320Z",
+        "__v": 0
+    }
+]
+//onn video pause
+42[
+    "chatMessage",
+    {
+        "musicStreaming": {
+            "title": "4MenDown Full Video - Millind Gaba | Latest Punjabi Songs | Speed Records",
+            "artist": "Speed Records",
+            "songurl": "vA_sCFYq_CM",
+            "imageurl": "https://i.ytimg.com/vi/vA_sCFYq_CM/hq720.jpg?sqp=-oaymwEXCNAFEJQDSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLCzbpk82QkVL5BefHG34wpfg3Oerg",
+            "time": "2025-08-07T19:48:04.389Z",
+            "action": 0,
+            "messageOwnerName": "sweabhishek01",
+            "messageOwnerUsername": "sweabhishek01",
+            "messageValue": "hii",
+            "playedBy": "sweabhishek01",
+            "youtubePlayer": true
+        },
+        "_id": "689501c3f737d2a3af3d3e6c",
+        "roomDesc": "This room is created by sweabhishek01",
+        "typing": [],
+        "admins": [],
+        "kicked": [],
+        "maxParticipants": 10,
+        "roomGenre": [],
+        "roomName": "Room by sweabhishek01",
+        "roomOwner": "5crPQgv5r6aPsXgWUN68w3VTeBd2",
+        "roomUid": "budylf",
+        "username": "sweabhishek01",
+        "roomCountry": "IN",
+        "roomEnabled": true,
+        "joinCount": 0,
+        "watchTime": 0,
+        "messagesSent": 0,
+        "likes": 0,
+        "dislikes": 0,
+        "engagementScore": 0,
+        "isPublicRoom": false,
+        "messagesHistory": [],
+        "activeUsers": [
+            {
+                "username": "sweabhishek01",
+                "joiningTime": "2025-08-07T19:45:58.768Z"
+            }
+        ],
+        "createdAt": "2025-08-07T19:42:59.320Z",
+        "updatedAt": "2025-08-07T19:42:59.320Z",
+        "__v": 0
+    }
+]
+
+
+[
+    "musicStreaming",
+    {
+        "title": "MILLIONAIRE SONG (Full Video): @YoYoHoneySingh  | GLORY | BHUSHAN KUMAR",
+        "artist": "T-Series",
+        "songurl": "XO8wew38VM8",
+        "imageurl": "https://i.ytimg.com/vi/XO8wew38VM8/hq720.jpg?sqp=-oaymwEXCNAFEJQDSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLDFguP62rJl0R0gxS9D9qzQjAarvg",
+        "time": "2025-08-07T19:54:40.165Z",
+        "action": 1,
+        "messageOwnerName": "sweabhishek01",
+        "messageOwnerUsername": "sweabhishek01",
+        "messageValue": "bhai sun na",
+        "playedBy": "sweabhishek01",
+        "youtubePlayer": true
+    }
+]
+//when someone send the message in the room
+[
+    "chatMessage",
+    {
+        "musicStreaming": {
+            "radio": false,
+            "time": "2025-08-08T01:36:19.089524",
+            "imageurl": "https://i.ytimg.com/vi/OIv0FLrbnGE/hq720.jpg?sqp=-oaymwEXCNAFEJQDSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLBosiOeKiJkV9r4KB9T14pL8_WMTg",
+            "action": 1,
+            "imageurlhigh": "",
+            "messageOwnerName": "Devsync",
+            "adminControl": false,
+            "messageOwnerUsername": "devsync",
+            "messageValue": "hii bro",
+            "playedBy": "sweabhishek01",
+            "songurl": "OIv0FLrbnGE",
+            "artist": "T-Series",
+            "title": "Call Aundi Video Song | ZORAWAR | Yo Yo Honey Singh | T-Series",
+            "youtubePlayer": true,
+            "playlist": null
+        },
+        "_id": "689501c3f737d2a3af3d3e6c",
+        "roomDesc": "This room is created by sweabhishek01",
+        "typing": [],
+        "admins": [],
+        "kicked": [],
+        "maxParticipants": 10,
+        "roomGenre": [],
+        "roomName": "Room by sweabhishek01",
+        "roomOwner": "5crPQgv5r6aPsXgWUN68w3VTeBd2",
+        "roomUid": "budylf",
+        "username": "sweabhishek01",
+        "roomCountry": "IN",
+        "roomEnabled": true,
+        "joinCount": 0,
+        "watchTime": 0,
+        "messagesSent": 0,
+        "likes": 0,
+        "dislikes": 0,
+        "engagementScore": 0,
+        "isPublicRoom": false,
+        "messagesHistory": [],
+        "activeUsers": [
+            {
+                "username": "devsync",
+                "imageUrl": "",
+                "isPremium": false,
+                "joiningTime": "2025-08-07T20:02:00.191Z"
+            },
+            {
+                "username": "sweabhishek01",
+                "joiningTime": "2025-08-07T20:03:00.148Z"
+            }
+        ],
+        "createdAt": "2025-08-07T19:42:59.320Z",
+        "updatedAt": "2025-08-07T19:42:59.320Z",
+        "__v": 0
+    }
+]
+
+//starting request
+[
+    "joinRoom",
+    {
+        "roomUid": "budylf",
+        "username": "sweabhishek01"
+    }
+]
+
+[
+    "alert",
+    {
+        "message": "sweabhishek01 joined the room.",
+        "type": "info"
+    }
+]
+
+[
+    "chatMessage",
+    {
+        "musicStreaming": {
+            "playlist": []
+        },
+        "_id": "68950864f737d2a3af3df44b",
+        "roomDesc": "This room is created by sweabhishek01",
+        "typing": [],
+        "admins": [],
+        "kicked": [],
+        "maxParticipants": 10,
+        "roomGenre": [],
+        "roomName": "Room by sweabhishek01",
+        "roomOwner": "5crPQgv5r6aPsXgWUN68w3VTeBd2",
+        "roomUid": "fmum27",
+        "username": "sweabhishek01",
+        "roomCountry": "IN",
+        "roomEnabled": true,
+        "joinCount": 0,
+        "watchTime": 0,
+        "messagesSent": 0,
+        "likes": 0,
+        "dislikes": 0,
+        "engagementScore": 0,
+        "isPublicRoom": false,
+        "messagesHistory": [],
+        "activeUsers": [
+            {
+                "username": "sweabhishek01",
+                "joiningTime": "2025-08-07T20:11:19.389Z"
+            }
+        ],
+        "createdAt": "2025-08-07T20:11:16.513Z",
+        "updatedAt": "2025-08-07T20:11:16.513Z",
+        "__v": 0
+    }
+]

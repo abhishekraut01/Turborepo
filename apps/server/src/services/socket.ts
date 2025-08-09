@@ -26,6 +26,7 @@ class socketServer {
 
   constructor() {
     console.log("🟢 init socket server");
+
     this._io = new Server({
       cors: {
         allowedHeaders: ["*"],
@@ -34,10 +35,10 @@ class socketServer {
     });
 
     sub.subscribe("MESSAGES");
-    
+
     sub.on("message", (channel, message) => {
       if (channel === "MESSAGES") {
-        this._io.emit("message", message); // broadcast to all clients
+        this._io.emit("message", message);
         console.log("📢 Broadcasted message from Redis:", message);
       }
     });
@@ -52,7 +53,7 @@ class socketServer {
 
       socket.on("event:message", async ({ message }: { message: string }) => {
         console.log("📨 Received from client:", message);
-        await pub.publish("MESSAGES",  message );
+        await pub.publish("MESSAGES", message);
       });
 
       socket.on("disconnect", (reason) => {
